@@ -5,7 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import dev.pegasus.swipeexoplayer.adapters.AdapterVideo
+import dev.pegasus.swipeexoplayer.adapters.PagerAdapterVideo
 import dev.pegasus.swipeexoplayer.data.DataSourceVideos
 import dev.pegasus.swipeexoplayer.databinding.ActivityMainBinding
 import dev.pegasus.swipeexoplayer.entities.ItemVideo
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViewPager(list: List<ItemVideo>) {
-        binding.viewPager.adapter = AdapterVideo(this, list.map { it.videoUrl })
+        binding.viewPager.adapter = PagerAdapterVideo(this, list.map { it.videoUrl })
         binding.viewPager.offscreenPageLimit = 1
     }
 }

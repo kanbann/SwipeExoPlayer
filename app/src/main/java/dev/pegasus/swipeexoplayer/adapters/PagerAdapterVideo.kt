@@ -14,7 +14,7 @@ import dev.pegasus.swipeexoplayer.fragments.FragmentVideo
  * - GitHub: https://github.com/epegasus
  */
 
-class AdapterVideo(fragmentActivity: FragmentActivity, private val videoUrls: List<String>) : FragmentStateAdapter(fragmentActivity) {
+class PagerAdapterVideo(fragmentActivity: FragmentActivity, private val videoUrls: List<String>) : FragmentStateAdapter(fragmentActivity) {
 
     override fun getItemCount(): Int = videoUrls.size
 
