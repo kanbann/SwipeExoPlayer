@@ -29,7 +29,7 @@ A high-performance Android app that implements a **vertical swipe video player**
 ## 📸 Screenshots
  Scrolling Experience
 
- <img src="[https://your-image-url.com/image.png](https://github.com/user-attachments/assets/590199d7-c38a-4a71-aa66-7e6d26dd941c)" width="400">
+ <img src="https://github.com/user-attachments/assets/590199d7-c38a-4a71-aa66-7e6d26dd941c" width="400">
 
  Video Playback
  
