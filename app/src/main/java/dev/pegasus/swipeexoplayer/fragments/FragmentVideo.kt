@@ -41,7 +41,6 @@ class FragmentVideo : Fragment() {
     }
 
     private fun initObservers() {
-        viewModel.isBufferingLiveData.observe(viewLifecycleOwner) { binding.progressBar.isVisible = it }
         viewModel.exoPlayerLiveData.observe(viewLifecycleOwner) { binding.playerView.player = it }
     }
 

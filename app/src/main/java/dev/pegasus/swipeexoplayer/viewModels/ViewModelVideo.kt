@@ -5,7 +5,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.media3.common.MediaItem
-import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
 
 /**
@@ -19,9 +18,6 @@ import androidx.media3.exoplayer.ExoPlayer
 
 class ViewModelVideo(private val application: Application) : AndroidViewModel(application) {
 
-    private val _isBufferingLiveData = MutableLiveData(false)
-    val isBufferingLiveData: LiveData<Boolean> = _isBufferingLiveData
-
     private val _exoPlayerLiveData = MutableLiveData<ExoPlayer>()
     val exoPlayerLiveData: LiveData<ExoPlayer> get() = _exoPlayerLiveData
 
@@ -32,13 +28,6 @@ class ViewModelVideo(private val application: Application) : AndroidViewModel(ap
             setMediaItem(MediaItem.fromUri(videoUrl))
             prepare()
             seekTo(playBackPosition)
-
-            addListener(object : Player.Listener {
-                override fun onPlaybackStateChanged(state: Int) {
-                    _isBufferingLiveData.postValue(state == Player.STATE_BUFFERING)
-                }
-            })
-
             _exoPlayerLiveData.value = this
         }
     }
